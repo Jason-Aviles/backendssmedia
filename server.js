@@ -14,6 +14,12 @@ app.use(
     useTempFiles: true,
   })
 );
+
+//connect to
+app.get('/connected', (req, res) => {
+  res.send('Connected to the backend!');
+});
+
 //routes
 readdirSync("./routes").map((r) => app.use("/", require("./routes/" + r)));
 
